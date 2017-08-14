@@ -259,7 +259,7 @@ namespace Newtonsoft.Json
         /// <param name="value">The value to convert.</param>
         /// <returns>A JSON string representation of the <see cref="Single"/>.</returns>
         public static string ToString(float value)
-        {
+        { 
             return EnsureDecimalPlace(value, value.ToString("G17", CultureInfo.InvariantCulture));
         }
 
