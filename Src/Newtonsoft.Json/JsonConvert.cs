@@ -259,13 +259,13 @@ namespace Newtonsoft.Json
         /// <param name="value">The value to convert.</param>
         /// <returns>A JSON string representation of the <see cref="Single"/>.</returns>
         public static string ToString(float value)
-        {
-            return EnsureDecimalPlace(value, value.ToString("R", CultureInfo.InvariantCulture));
+        { 
+            return EnsureDecimalPlace(value, value.ToString("G17", CultureInfo.InvariantCulture));
         }
 
         internal static string ToString(float value, FloatFormatHandling floatFormatHandling, char quoteChar, bool nullable)
         {
-            return EnsureFloatFormat(value, EnsureDecimalPlace(value, value.ToString("R", CultureInfo.InvariantCulture)), floatFormatHandling, quoteChar, nullable);
+            return EnsureFloatFormat(value, EnsureDecimalPlace(value, value.ToString("G17", CultureInfo.InvariantCulture)), floatFormatHandling, quoteChar, nullable);
         }
 
         private static string EnsureFloatFormat(double value, string text, FloatFormatHandling floatFormatHandling, char quoteChar, bool nullable)
@@ -290,12 +290,12 @@ namespace Newtonsoft.Json
         /// <returns>A JSON string representation of the <see cref="Double"/>.</returns>
         public static string ToString(double value)
         {
-            return EnsureDecimalPlace(value, value.ToString("R", CultureInfo.InvariantCulture));
+            return EnsureDecimalPlace(value, value.ToString("G17", CultureInfo.InvariantCulture));
         }
 
         internal static string ToString(double value, FloatFormatHandling floatFormatHandling, char quoteChar, bool nullable)
         {
-            return EnsureFloatFormat(value, EnsureDecimalPlace(value, value.ToString("R", CultureInfo.InvariantCulture)), floatFormatHandling, quoteChar, nullable);
+            return EnsureFloatFormat(value, EnsureDecimalPlace(value, value.ToString("G17", CultureInfo.InvariantCulture)), floatFormatHandling, quoteChar, nullable);
         }
 
         private static string EnsureDecimalPlace(double value, string text)
